@@ -1,6 +1,6 @@
 import React from "react";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import agent from "../agent";
 import {
   FOLLOW_USER,
@@ -66,13 +66,13 @@ const mapDispatchToProps = (dispatch) => ({
       type: FOLLOW_USER,
       payload: agent.Profile.follow(username),
     }),
-  onLoad: (payload) => dispatch({type: PROFILE_PAGE_LOADED, payload}),
+  onLoad: (payload) => dispatch({ type: PROFILE_PAGE_LOADED, payload }),
   onUnfollow: (username) =>
     dispatch({
       type: UNFOLLOW_USER,
       payload: agent.Profile.unfollow(username),
     }),
-  onUnload: () => dispatch({type: PROFILE_PAGE_UNLOADED}),
+  onUnload: () => dispatch({ type: PROFILE_PAGE_UNLOADED }),
 });
 
 class Profile extends React.Component {
@@ -168,4 +168,4 @@ class Profile extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-export {Profile, mapStateToProps};
+export { Profile, mapStateToProps };
